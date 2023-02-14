@@ -2,8 +2,13 @@ const HtmlWebpackPlugin= require('html-webpack-plugin');
 const MiniCssExtractPlugin=require('mini-css-extract-plugin');
 const path=require('path');
 
+const Env = process.env.NODE_ENV === 'production' ? 'production' : 'development'
+// TODO del
+console.log('........', process.env.NODE_ENV)
+
+
 module.exports={
-  mode:'development',
+  mode:Env,
   devServer:{
     static:'./'
   },
